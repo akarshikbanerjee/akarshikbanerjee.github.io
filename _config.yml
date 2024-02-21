@@ -1,1 +1,14 @@
+# _config.yml
+
+# Site settings
+title: Your Name - Economics PhD
+description: Welcome to the professional website of Your Name, Economics PhD Candidate.
+
+# Theme settings
 theme: jekyll-theme-minimal
+
+# GitHub Pages settings
+remote_theme: jekyll/minimal
+
+# Build settings
+markdown: kramdown
