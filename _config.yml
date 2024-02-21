@@ -1,3 +1,8 @@
+- name: Clean Jekyll Cache
+  run: |
+    rm -rf .jekyll-cache
+    rm -rf _site
+    
 # _config.yml
 
 # Site settings
