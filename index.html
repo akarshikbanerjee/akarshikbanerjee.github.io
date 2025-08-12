@@ -7,36 +7,58 @@
   <meta name="description" content="Personal website of Akarshik Banerjee — PhD candidate in Economics (Development, Behavioral, Gender, Experimental)." />
   <style>
     :root{
-      --bg:#0f172a; /* slate-900 */
-      --card:#111827cc; /* semi dark */
-      --text:#e5e7eb; /* gray-200 */
-      --muted:#94a3b8; /* slate-400 */
-      --accent:#38bdf8; /* sky-400 */
-      --chip:#1f2937; /* gray-800 */
+      --bg:#faf7f2;          /* cream */
+      --paper:#ffffff;        /* card white */
+      --text:#2b2b2b;         /* body text */
+      --muted:#5e5a52;        /* muted text */
+      --accent:#0f4d3f;       /* deep green */
+      --accent-2:#b08d57;     /* antique gold */
+      --rule:#e8e1d7;         /* hairline */
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0b1220, #0f172a); color:var(--text); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1050px;margin:0 auto;padding:28px}
-    header{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:20px}
+    html,body{margin:0;height:100%}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font:16px/1.7 "Georgia", "Garamond", "Times New Roman", serif;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{ text-decoration:underline }
+
+    .wrap{max-width:980px;margin:0 auto;padding:32px}
+
+    header{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--rule);}
     .id{display:flex;align-items:center;gap:18px}
-    .avatar{width:84px;height:84px;border-radius:16px;background:#111 url('https://avatars.githubusercontent.com/u/9919?s=200&v=4') center/cover no-repeat;box-shadow:0 6px 24px #0006}
-    h1{margin:0;font-size:28px;letter-spacing:.2px}
+    .avatar{width:80px;height:80px;border-radius:50%;background:#ddd url('https://avatars.githubusercontent.com/u/9919?s=200&v=4') center/cover no-repeat;border:2px solid var(--accent-2)}
+    h1{margin:0;font-size:30px;letter-spacing:.3px}
+
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-    .chip{background:var(--chip);border:1px solid #243042; padding:4px 10px;border-radius:999px;font-size:12px;color:#cbd5e1}
-    nav{display:flex;gap:16px;flex-wrap:wrap}
-    nav a{padding:10px 12px;border-radius:10px;background:#0b1322;border:1px solid #1e293b}
-    main{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
-    section{background:var(--card);backdrop-filter: blur(6px); border:1px solid #1f2937; padding:18px 18px;border-radius:16px;box-shadow:0 10px 30px #0005}
-    h2{margin:0 0 10px 0;font-size:18px}
+    .chip{
+      background:transparent;
+      border:1px solid var(--rule);
+      padding:4px 10px; border-radius:999px;
+      font-size:12px; color:var(--muted);
+      text-transform:uppercase; letter-spacing:.06em;
+    }
+
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav a{padding:6px 2px;border-bottom:2px solid transparent;color:#1f2b27;font-variant:small-caps;letter-spacing:.06em}
+    nav a:hover{border-color:var(--accent)}
+
+    main{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:20px}
+    section{background:var(--paper);border:1px solid var(--rule);padding:18px 18px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    h2{margin:0 0 12px 0;font-size:18px;font-variant:small-caps;letter-spacing:.06em;padding-bottom:6px;border-bottom:1px solid var(--rule)}
     ul{margin:0;padding-left:18px}
     .item{margin-bottom:10px}
     .muted{color:var(--muted);font-size:14px}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    footer{margin-top:24px;padding:16px 0;color:#9ca3af}
-    .btn{display:inline-block;background:#0ea5e9;border:1px solid #38bdf8;color:#081018;padding:8px 12px;border-radius:10px;font-weight:600}
-    .btn:hover{filter:brightness(1.08);text-decoration:none}
+
+    .btn{display:inline-block;background:var(--accent);border:1px solid #0b3d32;color:#fff;padding:8px 12px;border-radius:10px;font-weight:600}
+    .btn:hover{filter:brightness(1.05);text-decoration:none}
+
+    footer{margin-top:28px;padding:16px 0;color:var(--muted);border-top:1px solid var(--rule);text-align:center}
+
     @media (max-width:900px){main{grid-template-columns:1fr}}
   </style>
 </head>
@@ -98,7 +120,7 @@
 
       <section id="cv">
         <h2>CV</h2>
-        <p>Download my <a class="btn" href="Akarshik_Banerjee_CV.pdf">CV (PDF)</a>. You can also view selected awards, seminars, and consulting in the sections above.</p>
+        <p>Download my <a class="btn" href="Akarshik_Banerjee_CV.pdf">CV (PDF)</a>.</p>
         <div class="grid-2 muted">
           <div>
             <strong>Awards (selected)</strong>
