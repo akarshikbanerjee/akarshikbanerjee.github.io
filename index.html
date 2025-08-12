@@ -1,73 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akarshik Banerjee</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akarshik Banerjee | Economics</title>
+  <meta name="description" content="Personal website of Akarshik Banerjee — PhD candidate in Economics (Development, Behavioral, Gender, Experimental)." />
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --card:#111827cc; /* semi dark */
+      --text:#e5e7eb; /* gray-200 */
+      --muted:#94a3b8; /* slate-400 */
+      --accent:#38bdf8; /* sky-400 */
+      --chip:#1f2937; /* gray-800 */
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#0b1220, #0f172a); color:var(--text); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1050px;margin:0 auto;padding:28px}
+    header{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:20px}
+    .id{display:flex;align-items:center;gap:18px}
+    .avatar{width:84px;height:84px;border-radius:16px;background:#111 url('https://avatars.githubusercontent.com/u/9919?s=200&v=4') center/cover no-repeat;box-shadow:0 6px 24px #0006}
+    h1{margin:0;font-size:28px;letter-spacing:.2px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .chip{background:var(--chip);border:1px solid #243042; padding:4px 10px;border-radius:999px;font-size:12px;color:#cbd5e1}
+    nav{display:flex;gap:16px;flex-wrap:wrap}
+    nav a{padding:10px 12px;border-radius:10px;background:#0b1322;border:1px solid #1e293b}
+    main{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+    section{background:var(--card);backdrop-filter: blur(6px); border:1px solid #1f2937; padding:18px 18px;border-radius:16px;box-shadow:0 10px 30px #0005}
+    h2{margin:0 0 10px 0;font-size:18px}
+    ul{margin:0;padding-left:18px}
+    .item{margin-bottom:10px}
+    .muted{color:var(--muted);font-size:14px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    footer{margin-top:24px;padding:16px 0;color:#9ca3af}
+    .btn{display:inline-block;background:#0ea5e9;border:1px solid #38bdf8;color:#081018;padding:8px 12px;border-radius:10px;font-weight:600}
+    .btn:hover{filter:brightness(1.08);text-decoration:none}
+    @media (max-width:900px){main{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-    <!-- Header -->
+  <div class="wrap">
     <header>
-        <div class="container">
-            <h1>Akarshik Banerjee</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+      <div class="id">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1>Akarshik Banerjee</h1>
+          <div class="chips">
+            <span class="chip">Development</span>
+            <span class="chip">Behavioral</span>
+            <span class="chip">Gender</span>
+            <span class="chip">Experimental</span>
+          </div>
+          <div class="muted">PhD Candidate, Economics — The George Washington University</div>
         </div>
+      </div>
+      <nav>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="container">
-            <h2>Welcome</h2>
-            <p>Your tagline here: Economist | Researcher | Coffee Enthusiast</p>
+    <main>
+      <section id="research">
+        <h2>Research</h2>
+        <div class="item">
+          <strong>Job Market Paper:</strong> <em>Can access to smartphones lead to women empowerment? Experimental evidence from India</em>
+          <div class="muted">RCT; Uttar Pradesh; smartphone access + digital/financial training; outcomes on empowerment, agency, and norms. <a href="#">Abstract</a> · <a href="#">Draft</a></div>
         </div>
-    </section>
+        <ul>
+          <li class="item"><strong>The Effect of Improved Water Access on Women’s Empowerment and Health in India</strong> — <span class="muted">with co-authors; quasi-experimental; draft coming soon</span></li>
+          <li class="item"><strong>Long-term Access to Microfinance and Intra-household Bargaining</strong> — <span class="muted">with Shagata Mukherjee</span></li>
+          <li class="item"><strong>Shifting Adolescent Mindsets on Schooling</strong> — <span class="muted">with Jennifer Seager</span></li>
+        </ul>
+      </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                Hi, I'm Akarshik, an economics PhD student passionate about solving real-world problems through research and analysis. 
-                I enjoy teaching, exploring data, and staying fueled by coffee.
-            </p>
+      <section>
+        <h2>News</h2>
+        <ul>
+          <li class="item">Presenting at ESA North America, Tucson — Oct 2025</li>
+          <li class="item">Math Camp Instructor, GWU — Aug 2025</li>
+          <li class="item">ECINEQ Conference, Washington DC — July 2025</li>
+        </ul>
+      </section>
+
+      <section id="teaching">
+        <h2>Teaching</h2>
+        <ul>
+          <li class="item"><strong>Math Camp (PhD, GWU)</strong> — Linear algebra, multivariate calculus, real analysis.</li>
+          <li class="item"><strong>Microeconomics (TA/Guest)</strong> — Consumer, firm, GE, game theory; evals 4.9/5.</li>
+          <li class="item"><strong>Consumers & the Market (UW)</strong> — Primary instructor; evals 4.7/5.</li>
+        </ul>
+      </section>
+
+      <section id="cv">
+        <h2>CV</h2>
+        <p>Download my <a class="btn" href="Akarshik_Banerjee_CV.pdf">CV (PDF)</a>. You can also view selected awards, seminars, and consulting in the sections above.</p>
+        <div class="grid-2 muted">
+          <div>
+            <strong>Awards (selected)</strong>
+            <ul>
+              <li>$3,000 Elliot School Award for Research Excellence (2025)</li>
+              <li>GWU Graduate Student Fellowship (4% rate, 2023)</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Skills</strong>
+            <ul>
+              <li>Stata, Python, R, QGIS, GitHub, Colab</li>
+              <li>RDD, DID, Matching, Experiments</li>
+            </ul>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Description of the project and what it achieves.</p>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Description of the project and its impact.</p>
-            </div>
-        </div>
-    </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:akarshik.banerjee@gwu.edu">akarshik.banerjee@gwu.edu</a></p>
+        <p>GitHub: <a href="#">@akarshik</a> · Google Scholar · Twitter</p>
+      </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out via email at <a href="mailto:youremail@example.com">youremail@example.com</a>.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Akarshik Banerjee</p>
-        </div>
+      © <span id="y"></span> Akarshik Banerjee · Built with GitHub Pages
     </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
