@@ -56,16 +56,24 @@
     .btn{display:inline-block;background:var(--accent-2);border:1px solid var(--accent-2);color:#fff;padding:8px 12px;border-radius:10px;font-weight:600}
     .btn:hover{filter:brightness(1.05);text-decoration:none}
 
+    .full{grid-column:1/-1}
+    .project-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
+    .project-card{background:var(--bg);border:1px solid var(--rule);padding:16px 18px;border-radius:10px}
+    .project-title{font-weight:700;font-size:15px;margin-bottom:4px}
+    .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+    .proj-tag{background:var(--accent);color:#fff;font-size:11px;padding:2px 8px;border-radius:999px;letter-spacing:.04em}
+    .contact-links{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;font-size:15px}
+
     footer{margin-top:30px;padding:16px 0;color:var(--muted);border-top:1px solid var(--rule);text-align:center;font-size:14px}
 
     @media (max-width:900px){main{grid-template-columns:1fr}}
+    @media (max-width:600px){.project-cards{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="monogram">AB</div>
-      <div class="avatar" aria-hidden="true"></div>
       <h1>Akarshik Banerjee</h1>
       <div class="chips">
         <span class="chip">Development</span>
@@ -78,6 +86,7 @@
         <a href="#research">Research</a>
         <a href="#teaching">Teaching</a>
         <a href="#cv">CV</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -135,10 +144,34 @@
         </div>
       </section>
 
-      <section id="contact">
+      <section id="projects" class="full">
+        <h2>Code &amp; Projects</h2>
+        <div class="project-cards">
+          <div class="project-card">
+            <div class="project-title"><a href="https://github.com/akarshikbanerjee/akarshikbanerjee.github.io/blob/main/code/Extraction_to_Shape_files.ipynb">Extraction to Shape Files</a></div>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">QGIS</span>
+              <span class="proj-tag">Geospatial</span>
+            </div>
+            <p class="muted">A Jupyter notebook for extracting and processing geospatial data into QGIS-compatible shapefiles — useful for mapping administrative boundaries and spatial analysis in development economics research.</p>
+            <br>
+            <a class="btn" href="https://github.com/akarshikbanerjee/akarshikbanerjee.github.io/blob/main/code/Extraction_to_Shape_files.ipynb">View on GitHub →</a>
+          </div>
+          <div class="project-card aside">
+            <div class="project-title" style="color:var(--muted)">More coming soon</div>
+            <p class="muted" style="margin-top:8px">Additional code, data tools, and research utilities will appear here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="full">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:akarshik.banerjee@gwu.edu">akarshik.banerjee@gwu.edu</a></p>
-        <p>GitHub: <a href="#">@akarshik</a> · Google Scholar · Twitter</p>
+        <div class="contact-links">
+          <span>✉ <a href="mailto:akarshik.banerjee@gwu.edu">akarshik.banerjee@gwu.edu</a></span>
+          <span>⌥ <a href="https://github.com/akarshikbanerjee">GitHub @akarshikbanerjee</a></span>
+          <span class="muted">Google Scholar · Twitter/X — links coming soon</span>
+        </div>
       </section>
     </main>
 
