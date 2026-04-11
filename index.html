@@ -3,182 +3,280 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Akarshik Banerjee | Economics</title>
-  <meta name="description" content="Personal website of Akarshik Banerjee — PhD candidate in Economics (Development, Behavioral, Gender, Experimental), with a side of good humor." />
+  <title>Akarshik Banerjee</title>
+  <meta name="description" content="Personal website of Akarshik Banerjee — PhD candidate in Economics at The George Washington University." />
   <style>
-    :root{
-      --bg:#fbf8f2;          /* warm cream */
-      --paper:#ffffff;        /* card white */
-      --text:#242422;         /* ink */
-      --muted:#6b665d;        /* muted */
-      --accent:#0f4d3f;       /* deep green */
-      --accent-2:#b08d57;     /* antique gold */
-      --rule:#e7dfd3;         /* hairline */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: #111;
+      background: #fff;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%}
-    body{
-      background:var(--bg);
-      color:var(--text);
-      font:16px/1.75 "Iowan Old Style","Georgia","Garamond","Times New Roman",serif;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    a { color: #1a0dab; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 860px; margin: 48px auto; padding: 0 28px 64px; }
+
+    /* ── Header ───────────────────────────────────────────── */
+    .hdr { display: flex; gap: 36px; align-items: flex-start; padding-bottom: 28px; border-bottom: 1px solid #bbb; }
+
+    .hdr-photo {
+      flex-shrink: 0;
+      width: 155px; height: 195px;
+      background: #ddd;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 52px; color: #888;
+      font-family: Georgia, serif;
+      border: 1px solid #ccc;
     }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{ text-decoration:underline }
 
-    .wrap{max-width:980px;margin:0 auto;padding:36px 32px}
+    .hdr-info { flex: 1; padding-top: 4px; }
+    .hdr-info h1 { font-size: 24px; font-weight: bold; margin-bottom: 4px; }
+    .hdr-info .position { margin-bottom: 2px; color: #222; }
+    .hdr-info .affil { color: #444; margin-bottom: 14px; }
 
-    header{display:flex;flex-direction:column;align-items:center;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--rule);text-align:center}
-    .monogram{
-      font-size:34px;font-weight:700;font-family:"Times New Roman",serif;color:var(--accent);
-      border:3px double var(--accent-2);padding:12px 18px;border-radius:50%;line-height:1;letter-spacing:.04em
+    .hdr-contact { font-size: 14px; line-height: 2; }
+    .hdr-contact a { color: #1a0dab; }
+
+    nav { margin-top: 14px; }
+    nav a {
+      font-size: 14px;
+      color: #1a0dab;
+      margin-right: 18px;
     }
-    .avatar{width:120px;height:120px;border-radius:12px;background:#ddd url('https://placehold.co/240x240') center/cover no-repeat;border:4px solid var(--accent-2);box-shadow:0 6px 18px rgba(0,0,0,.08);margin-top:8px}
-    h1{margin:10px 0 0;font-size:32px;letter-spacing:.2px}
 
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;justify-content:center}
-    .chip{background:transparent;border:1px solid var(--rule);padding:4px 10px;border-radius:999px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+    /* ── Sections ─────────────────────────────────────────── */
+    section { margin-top: 32px; }
+    h2 {
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      border-bottom: 1px solid #bbb;
+      padding-bottom: 4px;
+      margin-bottom: 16px;
+    }
 
-    nav{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:8px}
-    nav a{padding:6px 2px;border-bottom:2px solid transparent;color:#21332f;font-variant:small-caps;letter-spacing:.06em}
-    nav a:hover{border-color:var(--accent)}
+    /* Papers */
+    .paper { margin-bottom: 18px; }
+    .paper-title { font-weight: bold; }
+    .paper-meta { color: #444; font-size: 14px; margin-top: 3px; }
+    .paper-links { margin-top: 3px; font-size: 13px; }
+    .paper-links a { color: #1a0dab; margin-right: 10px; }
 
-    main{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:22px}
-    section{background:var(--paper);border:1px solid var(--rule);padding:18px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-    h2{margin:0 0 12px 0;font-size:18px;font-variant:small-caps;letter-spacing:.06em;padding-bottom:6px;border-bottom:1px solid var(--rule)}
-    ul{margin:0;padding-left:18px}
-    .item{margin-bottom:10px}
-    .muted{color:var(--muted);font-size:14px}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    /* Generic list */
+    .plain-list { list-style: none; }
+    .plain-list li { margin-bottom: 10px; }
+    .plain-list li::before { content: "▸ "; color: #888; font-size: 11px; }
 
-    .aside{font-size:14px;color:#3b3a36;background:#fbf7f1;border:1px dashed var(--rule);padding:10px 12px;border-radius:10px}
+    /* News */
+    .news-list { list-style: none; }
+    .news-list li { margin-bottom: 6px; font-size: 14px; border-left: 3px solid #ddd; padding-left: 10px; }
+    .news-date { color: #777; font-size: 13px; }
 
-    .btn{display:inline-block;background:var(--accent-2);border:1px solid var(--accent-2);color:#fff;padding:8px 12px;border-radius:10px;font-weight:600}
-    .btn:hover{filter:brightness(1.05);text-decoration:none}
+    /* Teaching */
+    .teach-item { margin-bottom: 12px; }
+    .teach-item .course { font-weight: bold; }
+    .teach-item .role { color: #444; font-size: 14px; }
 
-    .full{grid-column:1/-1}
-    .project-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
-    .project-card{background:var(--bg);border:1px solid var(--rule);padding:16px 18px;border-radius:10px}
-    .project-title{font-weight:700;font-size:15px;margin-bottom:4px}
-    .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
-    .proj-tag{background:var(--accent);color:#fff;font-size:11px;padding:2px 8px;border-radius:999px;letter-spacing:.04em}
-    .contact-links{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;font-size:15px}
+    /* CV */
+    .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; font-size: 14px; }
+    .cv-grid h3 { font-size: 14px; font-weight: bold; margin-bottom: 6px; color: #222; }
+    .cv-grid ul { list-style: disc; padding-left: 18px; color: #333; }
+    .cv-grid li { margin-bottom: 4px; }
 
-    footer{margin-top:30px;padding:16px 0;color:var(--muted);border-top:1px solid var(--rule);text-align:center;font-size:14px}
+    /* Projects / Code */
+    .code-item { margin-bottom: 18px; }
+    .code-item .code-title { font-weight: bold; }
+    .code-item .code-tags { font-size: 13px; color: #555; margin: 2px 0 4px; }
+    .code-item .code-desc { font-size: 14px; color: #333; }
+    .code-item .code-links { font-size: 13px; margin-top: 4px; }
+    .code-item .code-links a { color: #1a0dab; margin-right: 10px; }
 
-    @media (max-width:900px){main{grid-template-columns:1fr}}
-    @media (max-width:600px){.project-cards{grid-template-columns:1fr}}
+    /* Contact */
+    .contact-table { border-collapse: collapse; font-size: 14px; }
+    .contact-table td { padding: 3px 20px 3px 0; vertical-align: top; }
+    .contact-table td:first-child { color: #555; white-space: nowrap; }
+
+    /* PDF button */
+    .pdf-link {
+      display: inline-block;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      border: 1px solid #1a0dab;
+      color: #1a0dab;
+      padding: 0px 6px;
+      border-radius: 2px;
+      margin-left: 4px;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+    .pdf-link:hover { background: #1a0dab; color: #fff; text-decoration: none; }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid #ddd;
+      font-size: 13px;
+      color: #888;
+    }
+
+    @media (max-width: 640px) {
+      .hdr { flex-direction: column; }
+      .hdr-photo { width: 120px; height: 150px; }
+      .cv-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="monogram">AB</div>
+<div class="wrap">
+
+  <!-- ── Header ──────────────────────────────────────────── -->
+  <header class="hdr">
+    <div class="hdr-photo" aria-hidden="true">AB</div>
+    <div class="hdr-info">
       <h1>Akarshik Banerjee</h1>
-      <div class="chips">
-        <span class="chip">Development</span>
-        <span class="chip">Behavioral</span>
-        <span class="chip">Gender</span>
-        <span class="chip">Experimental</span>
+      <p class="position">PhD Candidate in Economics</p>
+      <p class="affil">The George Washington University</p>
+
+      <div class="hdr-contact">
+        <div>Email: <a href="mailto:akarshik.banerjee@gwu.edu">akarshik.banerjee@gwu.edu</a></div>
+        <div>GitHub: <a href="https://github.com/akarshikbanerjee">@akarshikbanerjee</a></div>
+        <div>Fields: Development · Behavioral · Gender · Experimental</div>
       </div>
-      <div class="muted">PhD Candidate, Economics — The George Washington University<br><em>(Occasionally sneaks in an economics joke when no one is looking)</em></div>
+
       <nav>
         <a href="#research">Research</a>
         <a href="#teaching">Teaching</a>
         <a href="#cv">CV</a>
-        <a href="#projects">Projects</a>
+        <a href="#code">Code</a>
         <a href="#contact">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section id="research">
-        <h2>Research</h2>
-        <div class="item">
-          <strong>Job Market Paper:</strong> <em>Can access to smartphones lead to women empowerment? Experimental evidence from India</em>
-          <div class="muted">RCT; Uttar Pradesh; smartphone access + digital/financial training; outcomes on empowerment, agency, and norms. <a href="#">Abstract</a> · <a href="#">Draft</a></div>
-        </div>
+  <!-- ── News ────────────────────────────────────────────── -->
+  <section>
+    <h2>News</h2>
+    <ul class="news-list">
+      <li><span class="news-date">Oct 2025</span> — Presenting at ESA North America, Tucson, AZ</li>
+      <li><span class="news-date">Aug 2025</span> — Math Camp Instructor, GWU</li>
+      <li><span class="news-date">Jul 2025</span> — ECINEQ Conference, Washington DC</li>
+    </ul>
+  </section>
+
+  <!-- ── Research ─────────────────────────────────────────── -->
+  <section id="research">
+    <h2>Research</h2>
+
+    <p style="font-size:14px; color:#444; margin-bottom:16px;"><em>(Occasionally sneaks in an economics joke when no one is looking.)</em></p>
+
+    <div class="paper">
+      <div class="paper-title">
+        Can Access to Smartphones Lead to Women's Empowerment? Experimental Evidence from India
+        <a class="pdf-link" href="#">PDF</a>
+        <a class="pdf-link" href="#">Abstract</a>
+      </div>
+      <div class="paper-meta"><em>Job Market Paper</em></div>
+      <div class="paper-meta">RCT in Uttar Pradesh. Examines effects of smartphone access and digital/financial training on women's empowerment, agency, and social norms.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">The Effect of Improved Water Access on Women's Empowerment and Health in India</div>
+      <div class="paper-meta">With co-authors. Quasi-experimental design. <em>Draft coming soon.</em></div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Long-term Access to Microfinance and Intra-household Bargaining</div>
+      <div class="paper-meta">With Shagata Mukherjee.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Shifting Adolescent Mindsets on Schooling</div>
+      <div class="paper-meta">With Jennifer Seager.</div>
+    </div>
+  </section>
+
+  <!-- ── Teaching ─────────────────────────────────────────── -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+
+    <div class="teach-item">
+      <div class="course">Math Camp — PhD Program, GWU</div>
+      <div class="role">Instructor. Linear algebra, multivariate calculus, real analysis.</div>
+    </div>
+    <div class="teach-item">
+      <div class="course">Microeconomics</div>
+      <div class="role">Teaching Assistant / Guest Lecturer. Consumer theory, firm theory, general equilibrium, game theory. Evaluations: 4.9 / 5.</div>
+    </div>
+    <div class="teach-item">
+      <div class="course">Consumers &amp; the Market — University of Washington</div>
+      <div class="role">Primary Instructor. Evaluations: 4.7 / 5.</div>
+    </div>
+  </section>
+
+  <!-- ── CV ───────────────────────────────────────────────── -->
+  <section id="cv">
+    <h2>CV</h2>
+    <p style="margin-bottom:14px;">
+      <a href="Akarshik_Banerjee_CV.pdf">[Download CV (PDF)]</a>
+    </p>
+    <div class="cv-grid">
+      <div>
+        <h3>Awards (Selected)</h3>
         <ul>
-          <li class="item"><strong>The Effect of Improved Water Access on Women’s Empowerment and Health in India</strong> — <span class="muted">with co-authors; quasi-experimental; draft coming soon</span></li>
-          <li class="item"><strong>Long-term Access to Microfinance and Intra-household Bargaining</strong> — <span class="muted">with Shagata Mukherjee</span></li>
-          <li class="item"><strong>Shifting Adolescent Mindsets on Schooling</strong> — <span class="muted">with Jennifer Seager</span></li>
+          <li>Elliot School Award for Research Excellence — $3,000 (2025)</li>
+          <li>GWU Graduate Student Fellowship — 4% acceptance rate (2023)</li>
         </ul>
-      </section>
-
-      <section>
-        <h2>News</h2>
+      </div>
+      <div>
+        <h3>Methods &amp; Tools</h3>
         <ul>
-          <li class="item">Presenting at ESA North America, Tucson — Oct 2025</li>
-          <li class="item">Math Camp Instructor, GWU — Aug 2025</li>
-          <li class="item">ECINEQ Conference, Washington DC — July 2025</li>
+          <li>Stata, Python, R, QGIS, GitHub, Colab</li>
+          <li>RDD, DID, Matching, Randomized Experiments</li>
         </ul>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section id="teaching">
-        <h2>Teaching</h2>
-        <ul>
-          <li class="item"><strong>Math Camp (PhD, GWU)</strong> — Linear algebra, multivariate calculus, real analysis.</li>
-          <li class="item"><strong>Microeconomics (TA/Guest)</strong> — Consumer, firm, GE, game theory; evals 4.9/5.</li>
-          <li class="item"><strong>Consumers & the Market (UW)</strong> — Primary instructor; evals 4.7/5.</li>
-        </ul>
-      </section>
+  <!-- ── Code & Projects ─────────────────────────────────── -->
+  <section id="code">
+    <h2>Code &amp; Data</h2>
 
-      <section id="cv">
-        <h2>CV</h2>
-        <p>Download my <a class="btn" href="Akarshik_Banerjee_CV.pdf">CV (PDF)</a>.</p>
-        <div class="grid-2 muted">
-          <div>
-            <strong>Awards (selected)</strong>
-            <ul>
-              <li>$3,000 Elliot School Award for Research Excellence (2025)</li>
-              <li>GWU Graduate Student Fellowship (4% rate, 2023)</li>
-            </ul>
-          </div>
-          <div>
-            <strong>Skills</strong>
-            <ul>
-              <li>Stata, Python, R, QGIS, GitHub, Colab</li>
-              <li>RDD, DID, Matching, Experiments</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+    <div class="code-item">
+      <div class="code-title">Extraction to Shape Files</div>
+      <div class="code-tags">Python · QGIS · Geospatial</div>
+      <div class="code-desc">Jupyter notebook for extracting and processing geospatial data into QGIS-compatible shapefiles. Useful for mapping administrative boundaries and spatial analysis in development economics research.</div>
+      <div class="code-links">
+        <a href="https://github.com/akarshikbanerjee/akarshikbanerjee.github.io/blob/main/code/Extraction_to_Shape_files.ipynb">[Notebook on GitHub]</a>
+      </div>
+    </div>
 
-      <section id="projects" class="full">
-        <h2>Code &amp; Projects</h2>
-        <div class="project-cards">
-          <div class="project-card">
-            <div class="project-title"><a href="https://github.com/akarshikbanerjee/akarshikbanerjee.github.io/blob/main/code/Extraction_to_Shape_files.ipynb">Extraction to Shape Files</a></div>
-            <div class="proj-tags">
-              <span class="proj-tag">Python</span>
-              <span class="proj-tag">QGIS</span>
-              <span class="proj-tag">Geospatial</span>
-            </div>
-            <p class="muted">A Jupyter notebook for extracting and processing geospatial data into QGIS-compatible shapefiles — useful for mapping administrative boundaries and spatial analysis in development economics research.</p>
-            <br>
-            <a class="btn" href="https://github.com/akarshikbanerjee/akarshikbanerjee.github.io/blob/main/code/Extraction_to_Shape_files.ipynb">View on GitHub →</a>
-          </div>
-          <div class="project-card aside">
-            <div class="project-title" style="color:var(--muted)">More coming soon</div>
-            <p class="muted" style="margin-top:8px">Additional code, data tools, and research utilities will appear here.</p>
-          </div>
-        </div>
-      </section>
+    <div class="code-item" style="color:#888;">
+      <div class="code-title" style="color:#aaa;">More coming soon</div>
+      <div class="code-desc">Additional data and replication code will be posted here.</div>
+    </div>
+  </section>
 
-      <section id="contact" class="full">
-        <h2>Contact</h2>
-        <div class="contact-links">
-          <span>✉ <a href="mailto:akarshik.banerjee@gwu.edu">akarshik.banerjee@gwu.edu</a></span>
-          <span>⌥ <a href="https://github.com/akarshikbanerjee">GitHub @akarshikbanerjee</a></span>
-          <span class="muted">Google Scholar · Twitter/X — links coming soon</span>
-        </div>
-      </section>
-    </main>
+  <!-- ── Contact ──────────────────────────────────────────── -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <table class="contact-table">
+      <tr><td>Email</td><td><a href="mailto:akarshik.banerjee@gwu.edu">akarshik.banerjee@gwu.edu</a></td></tr>
+      <tr><td>GitHub</td><td><a href="https://github.com/akarshikbanerjee">github.com/akarshikbanerjee</a></td></tr>
+      <tr><td>Google Scholar</td><td><span style="color:#888;">Link coming soon</span></td></tr>
+      <tr><td>Twitter / X</td><td><span style="color:#888;">Link coming soon</span></td></tr>
+      <tr><td>Address</td><td>Department of Economics, The George Washington University<br>Washington, DC</td></tr>
+    </table>
+  </section>
 
-    <footer>
-      © <span id="y"></span> Akarshik Banerjee · Built with GitHub Pages · <em>Pun supply available upon request</em>
-    </footer>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <footer>
+    &copy; <span id="y"></span> Akarshik Banerjee &nbsp;&middot;&nbsp; Built with GitHub Pages
+  </footer>
+
+</div>
+<script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
