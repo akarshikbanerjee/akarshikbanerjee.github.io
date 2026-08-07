@@ -5,207 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Akarshik Banerjee</title>
 <meta name="description" content="Akarshik Banerjee — PhD Candidate in Economics, The George Washington University. Development, gender, and behavioral economics." />
-<style>
-  :root{
-    --ink:#1a1a1a;
-    --sub:#4b4b4b;
-    --faint:#7a7a7a;
-    --line:#e1ddd3;
-    --paper:#fffdf8;
-    --accent:#00563f;   /* deep academic green */
-    --accent-2:#a6192e; /* GWU buff/red accent for tiny highlights */
-    --link:#00563f;
-    --chip:#f1efe6;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
-    font-size:16px;
-    line-height:1.7;
-    color:var(--ink);
-    background:var(--paper);
-  }
-  a{color:var(--link);text-decoration:none;border-bottom:1px solid rgba(0,86,63,.35);}
-  a:hover{border-bottom-color:var(--accent);}
-
-  .wrap{max-width:800px;margin:0 auto;padding:0 24px 80px;}
-
-  /* ── Top bar ─────────────────────────────────────────── */
-  .topbar{
-    position:sticky;top:0;z-index:10;
-    background:rgba(255,253,248,.92);
-    backdrop-filter:saturate(180%) blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  .topbar-inner{
-    max-width:800px;margin:0 auto;padding:14px 24px;
-    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
-  }
-  .topbar-name{font-weight:700;font-size:15px;letter-spacing:.02em;}
-  .topbar-name a{border:none;color:var(--ink);}
-  nav.mainnav a{
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;
-    color:var(--sub);margin-left:18px;border:none;
-  }
-  nav.mainnav a:hover{color:var(--accent);}
-
-  /* ── Header / hero ───────────────────────────────────── */
-  .hdr{display:flex;gap:36px;align-items:flex-start;padding:52px 0 34px;}
-  .hdr-photo{
-    flex-shrink:0;width:148px;height:148px;border-radius:6px;
-    background:linear-gradient(155deg,var(--accent),#003b2b);
-    display:flex;align-items:center;justify-content:center;
-    font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:44px;color:#fdf6e3;
-    letter-spacing:.03em;
-  }
-  .hdr-info h1{font-size:30px;font-weight:700;margin-bottom:6px;letter-spacing:-.01em;}
-  .hdr-info .position{color:var(--sub);font-size:16.5px;margin-bottom:1px;}
-  .hdr-info .affil{color:var(--sub);font-size:16.5px;margin-bottom:14px;}
-  .fields{
-    font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.04em;
-    color:var(--accent);text-transform:uppercase;margin-bottom:14px;
-  }
-  .hdr-contact{font-size:14px;color:var(--sub);}
-  .hdr-contact a{color:var(--link);}
-  .hdr-contact .sep{color:var(--faint);margin:0 8px;}
-
-  .tagline{
-    margin-top:16px;font-size:15px;color:var(--sub);font-style:italic;
-    border-left:3px solid var(--line);padding-left:14px;
-  }
-
-  @media (max-width:600px){
-    .hdr{flex-direction:column;gap:18px;padding-top:32px;}
-    .hdr-photo{width:96px;height:96px;font-size:30px;}
-  }
-
-  /* ── Sections ────────────────────────────────────────── */
-  section{margin-top:52px;}
-  h2{
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
-    color:var(--accent);
-    padding-bottom:8px;margin-bottom:22px;border-bottom:1px solid var(--line);
-  }
-
-  /* News */
-  .news-list{list-style:none;}
-  .news-list li{
-    display:flex;gap:14px;font-size:14.5px;padding:7px 0;border-bottom:1px dashed var(--line);
-  }
-  .news-list li:last-child{border-bottom:none;}
-  .news-date{
-    flex-shrink:0;width:84px;color:var(--faint);
-    font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.03em;padding-top:2px;
-  }
-
-  /* Papers */
-  .paper{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
-  .paper:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
-  .paper-title{font-weight:700;font-size:16.5px;line-height:1.4;}
-  .tag{
-    display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:10.5px;
-    text-transform:uppercase;letter-spacing:.05em;color:var(--accent-2);
-    border:1px solid var(--accent-2);border-radius:20px;padding:2px 9px;margin-bottom:8px;
-  }
-  .paper-meta{color:var(--sub);font-size:14.5px;margin-top:6px;}
-  .paper-coauthor{color:var(--faint);font-size:13.5px;margin-top:3px;font-style:italic;}
-  .paper-links{margin-top:8px;font-size:12.5px;}
-  .paper-links a{
-    font-family:Arial,Helvetica,sans-serif;color:var(--accent);border:1px solid var(--line);
-    border-radius:3px;padding:2px 8px;margin-right:8px;text-transform:uppercase;letter-spacing:.03em;font-size:11px;
-  }
-  .paper-links a:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
-
-  /* Positions / experience timeline */
-  .xp{margin-bottom:20px;}
-  .xp-row{display:flex;gap:16px;}
-  .xp-date{
-    flex-shrink:0;width:118px;color:var(--faint);font-size:13px;
-    font-family:Arial,Helvetica,sans-serif;padding-top:2px;
-  }
-  .xp-body .xp-role{font-weight:700;font-size:15px;}
-  .xp-body .xp-org{color:var(--accent);font-size:13.5px;margin-bottom:4px;}
-  .xp-body .xp-desc{color:var(--sub);font-size:14px;}
-
-  /* Teaching */
-  .teach-item{margin-bottom:16px;}
-  .teach-item .course{font-weight:700;font-size:15.5px;}
-  .teach-item .role{color:var(--sub);font-size:14px;margin-top:2px;}
-  .teach-item .evals{
-    display:inline-block;margin-top:4px;font-family:Arial,Helvetica,sans-serif;
-    font-size:11px;color:var(--accent);background:var(--chip);padding:2px 8px;border-radius:3px;
-  }
-
-  /* CV grid */
-  .cv-lead{margin-bottom:22px;font-size:14.5px;color:var(--sub);}
-  .cv-lead a{font-weight:700;}
-  .cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;}
-  .cv-grid h3{
-    font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:.05em;
-    text-transform:uppercase;color:var(--ink);margin-bottom:10px;
-  }
-  .cv-grid ul{list-style:none;font-size:14px;color:var(--sub);}
-  .cv-grid li{margin-bottom:7px;padding-left:14px;position:relative;}
-  .cv-grid li::before{content:"—";position:absolute;left:0;color:var(--faint);}
-  @media (max-width:600px){.cv-grid{grid-template-columns:1fr;}}
-
-  /* Skills chips */
-  .chips{display:flex;flex-wrap:wrap;gap:8px;}
-  .chip{
-    font-family:Arial,Helvetica,sans-serif;font-size:12px;background:var(--chip);
-    color:var(--sub);padding:5px 11px;border-radius:20px;
-  }
-
-  /* Conferences compact list */
-  .conf-list{list-style:none;columns:1;font-size:14px;color:var(--sub);}
-  .conf-list li{display:flex;gap:12px;padding:5px 0;border-bottom:1px dashed var(--line);}
-  .conf-list li:last-child{border-bottom:none;}
-  .conf-date{flex-shrink:0;width:96px;color:var(--faint);font-family:Arial,Helvetica,sans-serif;font-size:11.5px;padding-top:2px;}
-
-  /* Code / projects */
-  .code-item{margin-bottom:20px;}
-  .code-item .code-title{font-weight:700;font-size:15.5px;}
-  .code-item .code-tags{font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:var(--accent);margin:4px 0 6px;text-transform:uppercase;letter-spacing:.03em;}
-  .code-item .code-desc{font-size:14px;color:var(--sub);}
-  .code-item .code-links{margin-top:6px;font-size:12.5px;}
-  .code-item.muted .code-title{color:var(--faint);}
-  .code-item.muted .code-desc{color:var(--faint);}
-
-  /* Contact */
-  .contact-table{border-collapse:collapse;font-size:14.5px;}
-  .contact-table td{padding:6px 24px 6px 0;vertical-align:top;}
-  .contact-table td:first-child{
-    color:var(--faint);font-family:Arial,Helvetica,sans-serif;font-size:11.5px;
-    text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;padding-top:8px;
-  }
-
-  footer{
-    margin-top:64px;padding-top:20px;border-top:1px solid var(--line);
-    font-size:12.5px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
-    font-family:Arial,Helvetica,sans-serif;
-  }
-  footer a{color:var(--faint);border-color:var(--faint);}
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="topbar-name"><a href="#top">Akarshik Banerjee</a></div>
+    <div class="topbar-name"><a href="index.html">Akarshik Banerjee</a></div>
     <nav class="mainnav">
-      <a href="#research">Research</a>
-      <a href="#experience">Experience</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#cv">CV</a>
-      <a href="#code">Code</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="research.html">Research</a>
+      <a href="experience.html">Experience</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="cv.html">CV</a>
+      <a href="code.html">Code</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </div>
 
-<div class="wrap" id="top">
+<div class="wrap">
 
   <header class="hdr">
     <div class="hdr-photo" aria-hidden="true">AB</div>
@@ -236,240 +55,35 @@
     </ul>
   </section>
 
-  <!-- ── Research ──────────────────────────────────────── -->
-  <section id="research">
-    <h2>Research</h2>
-    <p style="font-size:14px;color:var(--sub);margin-bottom:22px;font-style:italic;">Fields: Economic Development · Gender · Behavioral Economics · Experimental Design</p>
-
-    <div class="paper">
-      <span class="tag">Job Market Paper</span>
-      <div class="paper-title">May the Phone Be With You: Impact of Smartphone Ownership on Women's Empowerment</div>
-      <div class="paper-meta">A randomized controlled trial in Uttar Pradesh, India, examining how smartphone access and digital/financial literacy training affect women's empowerment, agency, and social norms.</div>
-      <div class="paper-links">
-        <a href="#">PDF</a><a href="#">Abstract</a>
-      </div>
+  <!-- ── Explore ──────────────────────────────────────── -->
+  <section>
+    <h2>Explore</h2>
+    <div class="card-grid">
+      <a class="card" href="research.html">
+        <div class="card-title">Research →</div>
+        <div class="card-desc">Job market paper, working papers, and research fields.</div>
+      </a>
+      <a class="card" href="experience.html">
+        <div class="card-title">Experience →</div>
+        <div class="card-desc">Academic positions, World Bank, HSBC, and EXL Analytics.</div>
+      </a>
+      <a class="card" href="teaching.html">
+        <div class="card-title">Teaching →</div>
+        <div class="card-desc">Math Camp, Microeconomics, and course evaluations.</div>
+      </a>
+      <a class="card" href="cv.html">
+        <div class="card-title">CV →</div>
+        <div class="card-desc">Education, awards, skills, conferences, and full PDF.</div>
+      </a>
+      <a class="card" href="code.html">
+        <div class="card-title">Code &amp; Data →</div>
+        <div class="card-desc">Notebooks and replication material.</div>
+      </a>
+      <a class="card" href="contact.html">
+        <div class="card-title">Contact →</div>
+        <div class="card-desc">Email, GitHub, and office address.</div>
+      </a>
     </div>
-
-    <div class="paper">
-      <div class="paper-title">Ain't Gonna Work on Maggie's Farm No More? Job Quality and Capabilities in Ghana</div>
-      <div class="paper-coauthor">with Hugo Blunch and James Foster</div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">"I Have Grown Confidence in Me": Shifting Adolescent Mindsets on Schooling</div>
-      <div class="paper-coauthor">with Jennifer Seager</div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">Power Gender Resource Theory: Linking Neighborhood Wealth Comparisons and Wife Abuse in India</div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">Long-term Access to Microfinance Does Not Improve Intra-Household Bargaining Power of Women</div>
-      <div class="paper-coauthor">with Shagata Mukherjee</div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">Impact of Gender Mindset on IPV: Evidence from Tribal Population in India</div>
-    </div>
-  </section>
-
-  <!-- ── Academic & Corporate Experience ─────────────────── -->
-  <section id="experience">
-    <h2>Experience</h2>
-
-    <div class="xp">
-      <div class="xp-row">
-        <div class="xp-date">Dec 2023 – Present</div>
-        <div class="xp-body">
-          <div class="xp-role">Research Consultant</div>
-          <div class="xp-org">Centre for Social and Behaviour Change, Ashoka University, India</div>
-          <div class="xp-desc">Secured a $60,000 grant (10% acceptance rate) to lead a follow-up study on the long-run impact of smartphone access on women's empowerment using adaptive treatment assignment. Built large-scale datasets and conducted reproducible causal analysis, including ML-based treatment effect estimation.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="xp">
-      <div class="xp-row">
-        <div class="xp-date">Jun – Aug 2025</div>
-        <div class="xp-body">
-          <div class="xp-role">Student Research Specialist</div>
-          <div class="xp-org">The George Washington University</div>
-          <div class="xp-desc">Conducted spatial and statistical analysis on urban economic data using Stata, QGIS, and Google Earth; built reproducible workflows integrating GitHub and Google Colab for visualization and geospatial mapping.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="xp">
-      <div class="xp-row">
-        <div class="xp-date">Oct 2023 – Aug 2024</div>
-        <div class="xp-body">
-          <div class="xp-role">Research Assistant</div>
-          <div class="xp-org">The George Washington University</div>
-          <div class="xp-desc">Large-scale survey data analysis, causal inference, grant writing, and project management on development economics projects in Tanzania, Ghana, India, and Bangladesh.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="xp">
-      <div class="xp-row">
-        <div class="xp-date">May – Aug 2022</div>
-        <div class="xp-body">
-          <div class="xp-role">Short-Term Consultant</div>
-          <div class="xp-org">The World Bank</div>
-          <div class="xp-desc">Designed and implemented a multi-arm, school-based experiment in Bangladesh using vignette interventions to shift adolescents' gender norms. Identified measurement issues in the implicit association test (IAT) and recommended design corrections adopted in the endline survey.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="xp">
-      <div class="xp-row">
-        <div class="xp-date">Oct 2021 – Jan 2022</div>
-        <div class="xp-body">
-          <div class="xp-role">Behavioral Insights for Policy Fellow</div>
-          <div class="xp-org">Ashoka University, India</div>
-          <div class="xp-desc">Lab-in-the-field experiments across matrilineal and patrilineal societies in India to study gender differences in moral hazard behavior. Selected as 1 of 18 applicants out of 200.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="xp">
-      <div class="xp-row">
-        <div class="xp-date">Jul 2019 – Jul 2021</div>
-        <div class="xp-body">
-          <div class="xp-role">Analyst, Decision Sciences</div>
-          <div class="xp-org">HSBC</div>
-          <div class="xp-desc">Model developer for France's small business portfolio — predicting probability of default and prescribing capital reserve requirements under stressed economic scenarios. (Proof that I did economics before it was theoretical.)</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="xp">
-      <div class="xp-row">
-        <div class="xp-date">Sep 2017 – Jun 2019</div>
-        <div class="xp-body">
-          <div class="xp-role">Data Scientist</div>
-          <div class="xp-org">EXL Analytics Pvt. Ltd.</div>
-          <div class="xp-desc">Built machine learning models for a Fortune 40 US retail company addressing customer churn, upgrade, and upsell prediction.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Teaching ─────────────────────────────────────── -->
-  <section id="teaching">
-    <h2>Teaching</h2>
-
-    <div class="teach-item">
-      <div class="course">Math Camp — PhD Program, GWU</div>
-      <div class="role">Instructor for 16 incoming PhD students. Linear algebra, multivariate calculus, real analysis. Designed and evaluated exams. (2025 &amp; 2026)</div>
-    </div>
-    <div class="teach-item">
-      <div class="course">Microeconomics — PhD Program, GWU</div>
-      <div class="role">Graduate Assistant, 2024–present. Weekly lectures covering consumer theory, theory of the firm, general equilibrium, stochastic dominance, and game theory.</div>
-      <span class="evals">Course evaluation: 4.9 / 5</span>
-    </div>
-    <div class="teach-item">
-      <div class="course">Consumers &amp; the Market — University of Wisconsin–Madison</div>
-      <div class="role">Primary Instructor, Summer 2022. Designed and taught a full undergraduate course — office hours, lecture videos, evaluation materials, and grading, for 18 students.</div>
-      <span class="evals">Course evaluation: 4.7 / 5</span>
-    </div>
-    <div class="teach-item">
-      <div class="course">Applied Microeconomics — University of Wisconsin–Madison</div>
-      <div class="role">Teaching Assistant, 2022–2023. Undergraduate applied microeconomics.</div>
-    </div>
-  </section>
-
-  <!-- ── CV ───────────────────────────────────────────── -->
-  <section id="cv">
-    <h2>CV</h2>
-    <p class="cv-lead"><a href="Akarshik_Banerjee_CV.pdf">Download full CV (PDF) →</a></p>
-
-    <div class="cv-grid">
-      <div>
-        <h3>Education</h3>
-        <ul>
-          <li>PhD, Economics — GWU (2023–2028 expected)</li>
-          <li>MS, Consumer Economics — UW–Madison, GPA 4.0, Rank 1/4 (2023)</li>
-          <li>MA, Economics — Jawaharlal Nehru University, Rank 6/120 (2017)</li>
-          <li>BSc Hons., Economics — Calcutta University, Rank 7/2000+ (2015)</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Selected Awards</h3>
-        <ul>
-          <li>BRAC Women's Econ. Empowerment &amp; Digital Connectivity Grant — $60,000 (2026)</li>
-          <li>Elliot School Award for Research Excellence — $3,000 (2025)</li>
-          <li>GWU Graduate Student Fellowship — 4% acceptance rate (2023)</li>
-          <li>UW–Madison Graduate Student Fellowship — $45,818 (2021)</li>
-          <li>Junior Research Fellowship, UGC — 1% acceptance rate (2019)</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Software</h3>
-        <div class="chips">
-          <span class="chip">Stata</span><span class="chip">Python</span><span class="chip">R</span>
-          <span class="chip">SAS</span><span class="chip">SQL</span><span class="chip">QGIS</span>
-          <span class="chip">MATLAB</span><span class="chip">GitHub</span><span class="chip">Google Colab</span>
-          <span class="chip">VBA</span>
-        </div>
-      </div>
-      <div>
-        <h3>Methods</h3>
-        <div class="chips">
-          <span class="chip">RCTs</span><span class="chip">RDD</span><span class="chip">DID</span>
-          <span class="chip">Matching</span><span class="chip">Probit / Tobit</span>
-          <span class="chip">Random Forest</span><span class="chip">ARIMA</span>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:32px;">
-      <h3 style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;">Conferences &amp; Presentations (Selected)</h3>
-      <ul class="conf-list">
-        <li><span class="conf-date">Jan 2026</span><span>ASSA Annual Meeting, Philadelphia, PA</span></li>
-        <li><span class="conf-date">Oct 2025</span><span>Economic Science Association (ESA), Tucson, AZ — presented</span></li>
-        <li><span class="conf-date">Jul 2025</span><span>ECINEQ Conference, Washington, DC</span></li>
-        <li><span class="conf-date">May 2025</span><span>Guest Lecture, Tehran Institute for Advanced Studies</span></li>
-        <li><span class="conf-date">Apr 2025</span><span>WADES Conference, Arlington, VA</span></li>
-        <li><span class="conf-date">Apr 2025</span><span>SEEDS Conference, Atlanta, GA — presented</span></li>
-        <li><span class="conf-date">Jan 2025</span><span>ASSA Annual Meeting, San Francisco, CA</span></li>
-        <li><span class="conf-date">Nov 2024</span><span>Southern Economic Association Conference, Washington, DC — presented</span></li>
-        <li><span class="conf-date">Apr 2024</span><span>Population Association of America, Columbus, OH — presented</span></li>
-        <li><span class="conf-date">Jan 2024</span><span>Econometric Society Conference, New Delhi, India</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ── Code & Projects ─────────────────────────────── -->
-  <section id="code">
-    <h2>Code &amp; Data</h2>
-
-    <div class="code-item">
-      <div class="code-title">Extraction to Shape Files</div>
-      <div class="code-tags">Python · QGIS · Geospatial</div>
-      <div class="code-desc">A Jupyter notebook for extracting and processing geospatial data into QGIS-compatible shapefiles — useful for mapping administrative boundaries and spatial analysis in development economics research.</div>
-      <div class="code-links">
-        <a href="https://github.com/akarshikbanerjee/akarshikbanerjee.github.io/blob/main/code/Extraction_to_Shape_files.ipynb">Notebook on GitHub →</a>
-      </div>
-    </div>
-
-    <div class="code-item muted">
-      <div class="code-title">More coming soon</div>
-      <div class="code-desc">Additional replication code and data will be posted here as papers move through the pipeline.</div>
-    </div>
-  </section>
-
-  <!-- ── Contact ──────────────────────────────────────── -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <table class="contact-table">
-      <tr><td>Email</td><td><a href="mailto:akarshik.banerjee@gwu.edu">akarshik.banerjee@gwu.edu</a></td></tr>
-      <tr><td>GitHub</td><td><a href="https://github.com/akarshikbanerjee">github.com/akarshikbanerjee</a></td></tr>
-      <tr><td>Google Scholar</td><td><span style="color:var(--faint);">Link coming soon</span></td></tr>
-      <tr><td>Twitter / X</td><td><span style="color:var(--faint);">Link coming soon</span></td></tr>
-      <tr><td>Address</td><td>Department of Economics, The George Washington University<br>Washington, DC</td></tr>
-    </table>
   </section>
 
   <footer>
